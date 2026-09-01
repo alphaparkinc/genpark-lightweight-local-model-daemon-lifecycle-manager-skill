@@ -1,0 +1,38 @@
+{
+  "name": "genpark-lightweight-local-model-daemon-lifecycle-manager-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Lightweight local model daemon lifecycle manager orchestrating quantized GGUF weights hot-swapping and HTTP endpoints.",
+  "author": "genpark",
+  "category": "local-inference",
+  "tags": [
+    "ollama",
+    "local-llm",
+    "gguf-daemon",
+    "hot-swap",
+    "vram-management"
+  ],
+  "inputs": {
+    "target_model_tag": {
+      "type": "string"
+    },
+    "daemon_action": {
+      "type": "string"
+    }
+  },
+  "outputs": {
+    "daemon_task_id": {
+      "type": "string"
+    },
+    "gpu_vram_allocated_gb": {
+      "type": "number"
+    },
+    "cold_start_swap_latency_ms": {
+      "type": "integer"
+    },
+    "local_http_inference_endpoint": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
